@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Ziya ✨</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#090716;color:#fff;font-family:system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 20% 20%,#34204f,transparent 45%),radial-gradient(ellipse at 80% 70%,#471b46,transparent 40%),#090716}
+main{position:relative}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:32px 18px}.eyebrow{letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;color:#e8b9d4}.title{font:clamp(3.7rem,12vw,8rem)/.95 Georgia,serif;margin:22px 0;background:linear-gradient(120deg,#fff,#ffc4e2 45%,#bba8ff);-webkit-background-clip:text;color:transparent}.subtitle{color:#d8c8e7;max-width:520px;line-height:1.7;margin:0 auto 28px}
+.btn{border:1px solid #ffffff44;background:linear-gradient(120deg,#ff5fa2,#986bff);color:white;padding:14px 24px;border-radius:999px;font-weight:700;cursor:pointer}.pulse{display:inline-grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#ff5fa21c;border:1px solid #ff9bc955;font-size:2rem;animation:pulse 2s infinite}@keyframes pulse{50%{box-shadow:0 0 40px #ff5fa266;transform:scale(1.06)}}
+section{padding:75px 20px;max-width:1050px;margin:auto}.label{text-align:center;color:#ffacd3;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem}.heading{text-align:center;font:clamp(2.1rem,6vw,4rem) Georgia,serif;margin:12px 0 34px}.card{background:linear-gradient(145deg,#ffffff12,#ffffff05);border:1px solid #ffffff1a;border-radius:25px;padding:clamp(22px,5vw,40px);backdrop-filter:blur(12px)}.message{max-width:720px;margin:auto;text-align:center;color:#f5e8f2;line-height:1.9}.message strong{color:#ffb6d8}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.photo{border:1px solid #ffffff22;border-radius:20px;padding:8px;background:#ffffff0b;cursor:pointer;transition:.25s}.photo:hover{transform:translateY(-5px);border-color:#ff9bc9}.photo img{width:100%;height:300px;object-fit:cover;border-radius:14px;display:block}.caption{text-align:center;color:#f5c6df;padding:12px 5px 5px;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}.tile{cursor:pointer;text-align:center;min-height:145px;color:white}.tile span{font-size:2.4rem}.tile h3{margin:8px}.tile p{color:#cdbbd7;font-size:.85rem}.reveal{display:none;margin-top:18px;text-align:center;line-height:1.8;color:#ffe4f2}.reveal.show{display:block}
+.cake{text-align:center;font-size:5rem;filter:drop-shadow(0 0 20px #ff79b8)}.wish{display:none;text-align:center}.wish.show{display:block}footer{text-align:center;padding:40px;color:#a995b8}
+.modal{position:fixed;inset:0;z-index:5;background:#080512e8;display:none;place-items:center;padding:20px}.modal.open{display:grid}.modal img{max-width:92vw;max-height:85vh;object-fit:contain;border-radius:16px}.close{position:absolute;top:18px;right:22px;background:#ffffff22;color:white;border:0;border-radius:50%;font-size:1.6rem;width:44px;height:44px;cursor:pointer}
+
+/* Gentle falling hearts */
+.hearts-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.falling-heart{position:absolute;top:-30px;color:#ff9acb;opacity:.68;animation:heart-fall linear forwards;text-shadow:0 0 10px #ff70b455}
+@keyframes heart-fall{to{transform:translate3d(var(--drift),110vh,0) rotate(360deg);opacity:.05}}
+main{z-index:1}
+.music-control{position:fixed;right:16px;bottom:16px;z-index:8;border:1px solid #ffffff44;background:#24132ee8;color:#fff;border-radius:999px;padding:11px 15px;font-weight:650;cursor:pointer;backdrop-filter:blur(10px)}
+@media(prefers-reduced-motion:reduce){.falling-heart{animation-duration:20s!important}}
+</style></head><body><div class="hearts-layer" id="hearts" aria-hidden="true"></div><button class="music-control" id="musicToggle" type="button" aria-pressed="false">♫ Play birthday music</button><main>
+<section class="hero" id="top"><div><div class="pulse">✦</div><button class="btn" id="startBirthday" onclick="beginBirthday()">Start the surprise ✨</button><div id="countdown" aria-live="polite" style="display:none;font:700 clamp(3rem,12vw,6rem) Georgia,serif;margin:20px 0;color:#ffc4e2"></div><div class="eyebrow">A little universe, made for you</div><h1 class="title">Happy Birthday<br>Ziya</h1><p class="subtitle">For Rumeesha — the kind of person who makes ordinary days feel a little more magical.</p><button class="btn" onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})">Open your surprises ✨</button></div></section>
+<section><div class="label">A note from my heart</div><h2 class="heading">To my Ziya 💌</h2><div class="card message"><p>Happy Birthday, <strong>Rumeesha</strong>! 🎂</p><p>I hope this new chapter brings you the kind of happiness that stays, the kind of laughter that makes your cheeks hurt, and little moments that become your favourite memories.</p><p>You deserve all the love, peace, magic, and beautiful surprises this world can offer. Keep being your wonderful self — the world is brighter with you in it.</p><p>Have the most beautiful birthday, Ziya. ✨</p></div></section>
+<section id="gallery"><div class="label">Little moments, big memories</div><h2 class="heading">A gallery for you 📸</h2><div class="gallery">
+<div class="photo" onclick="openPhoto(1)"><img src="images/ziya-1.jpg" alt="Ziya in a white scarf and sunglasses"><div class="caption">A little mystery ✨</div></div>
+<div class="photo" onclick="openPhoto(2)"><img src="images/ziya-2.jpg" alt="Ziya by the waterfall"><div class="caption">Chasing beautiful moments</div></div>
+<div class="photo" onclick="openPhoto(3)"><img src="images/ziya-3.jpg" alt="Ziya in a red outfit"><div class="caption">That beautiful smile ❤️</div></div>
+<div class="photo" onclick="openPhoto(4)"><img src="images/ziya-4.jpg" alt="Ziya in a black and white selfie"><div class="caption">Classic and lovely</div></div>
+<div class="photo" onclick="openPhoto(5)"><img src="images/ziya-5.jpg" alt="Ziya in school uniform"><div class="caption">A memory to keep</div></div>
+<div class="photo" onclick="openPhoto(6)"><img src="images/ziya-6.jpg" alt="Ziya in a festive outfit"><div class="caption">Simply radiant 🌷</div></div>
+<div class="photo" onclick="openPhoto(7)"><img src="images/ziya-7.jpg" alt="Ziya with a playful filter"><div class="caption">Your fun side 💗</div></div>
+<div class="photo" onclick="openPhoto(8)"><img src="images/ziya-8.jpg" alt="A photo of the two of you together"><div class="caption">A favourite memory together</div></div>
+</div></section>
+<section><div class="label">Tap around — there's more</div><h2 class="heading">Little birthday surprises</h2><div class="grid"><button class="card tile" onclick="show('r1')"><span>💖</span><h3>A tiny reminder</h3><p>Tap to reveal</p></button><button class="card tile" onclick="show('r2')"><span>🌙</span><h3>A wish for your year</h3><p>Tap to reveal</p></button><button class="card tile" onclick="show('r3')"><span>🪄</span><h3>A little magic</h3><p>Tap to reveal</p></button></div><div id="r1" class="card reveal">You make a difference just by being you. Never forget how special your presence is. 💗</div><div id="r2" class="card reveal">May this year bring you unexpected joy, brave new beginnings, and a hundred reasons to smile. 🌷</div><div id="r3" class="card reveal">I hope this year brings you a whole lot of feeling loved, seen, and genuinely happy. ✨</div></section>
+
+<footer>Designed for Ziya with a little extra sparkle ✨</footer></main>
+<div class="modal" id="modal" onclick="if(event.target===this)closePhoto()"><button class="close" onclick="closePhoto()">×</button><img id="big" alt="Expanded birthday memory"></div>
+<script>
+function openPhoto(n){document.getElementById('big').src='images/ziya-'+n+'.jpg';document.getElementById('modal').classList.add('open')}function closePhoto(){document.getElementById('modal').classList.remove('open')}function show(id){document.getElementById(id).classList.toggle('show')}
+function confetti(){for(let i=0;i<65;i++){let e=document.createElement('span');e.textContent=['✨','💖','🎉','🌸'][i%4];e.style.cssText=`position:fixed;z-index:10;left:${Math.random()*100}vw;top:-30px;font-size:${14+Math.random()*20}px;animation:fall ${2+Math.random()*3}s linear forwards;pointer-events:none`;document.body.append(e);setTimeout(()=>e.remove(),5200)}}
+let s=document.createElement('style');s.textContent='@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}';document.head.append(s);
+
+// Countdown starts only when the visitor presses the opening button.
+const birthdayAudio = new Audio('river-flows-in-you.mp3');
+birthdayAudio.loop = true;
+birthdayAudio.preload = 'auto';
+let countdownRunning = false;
+async function beginBirthday(){
+  if(countdownRunning) return;
+  countdownRunning = true;
+  const button=document.getElementById('startBirthday');
+  const display=document.getElementById('countdown');
+  button.disabled=true;
+  button.style.display='none';
+  display.style.display='block';
+  for(let n=3;n>=1;n--){
+    display.textContent=n;
+    await new Promise(resolve=>setTimeout(resolve,1000));
+  }
+  display.textContent='✨';
+  try{
+    await birthdayAudio.play();
+    display.style.display='none';
+    document.getElementById('musicToggle').style.display='block';
+  }catch(error){
+    display.textContent='Tap to play music';
+    button.style.display='inline-block';
+    button.disabled=false;
+    button.textContent='Play music';
+    countdownRunning=false;
+  }
+}
+const musicToggle=document.getElementById('musicToggle');
+musicToggle.style.display='none';
+musicToggle.addEventListener('click',()=>{
+  if(birthdayAudio.paused){
+    birthdayAudio.play();
+    musicToggle.textContent='♫ Pause birthday music';
+    musicToggle.setAttribute('aria-pressed','true');
+  }else{
+    birthdayAudio.pause();
+    musicToggle.textContent='♫ Play birthday music';
+    musicToggle.setAttribute('aria-pressed','false');
+  }
+});
+function makeHeart(){
+  const layer=document.getElementById('hearts'),h=document.createElement('span');
+  h.className='falling-heart';h.textContent=Math.random()>.5?'♡':'♥';
+  h.style.left=(Math.random()*100)+'vw';
+  h.style.fontSize=(10+Math.random()*14)+'px';
+  h.style.animationDuration=(8+Math.random()*8)+'s';
+  h.style.setProperty('--drift',((Math.random()*100)-50)+'px');
+  layer.appendChild(h);setTimeout(()=>h.remove(),17000);
+}
+for(let i=0;i<18;i++)setTimeout(makeHeart,i*250);
+setInterval(makeHeart,650);
+</script></body></html>
