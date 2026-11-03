@@ -56,7 +56,7 @@ function makeHeart(){
 for(let i=0;i<18;i++)setTimeout(makeHeart,i*250);
 setInterval(makeHeart,650);
 
-const birthdayAudio=new Audio('Yiruma 이루마 - River Flows in You [youaretube.com].mp3');birthdayAudio.loop=true;birthdayAudio.preload='auto';
+const birthdayAudio = new Audio('./river-flows-in-you.mp3');birthdayAudio.loop=true;birthdayAudio.preload='auto';
 const startButton=document.getElementById('startBirthday'),playAtStart=document.getElementById('playMusicAtStart'),countDisplay=document.getElementById('countdown'),intro=document.getElementById('intro'),audioError=document.getElementById('audioError');
 playAtStart.addEventListener('click',async()=>{try{await birthdayAudio.play();playAtStart.textContent='♫ Music is playing';playAtStart.disabled=true;audioError.textContent='';}catch(e){audioError.textContent='Music could not start. Check that the MP3 is beside this HTML file and try again.';}});
 const musicToggle=document.createElement('button');musicToggle.className='music-control';musicToggle.id='musicToggle';musicToggle.type='button';musicToggle.textContent='♫ Pause birthday music';musicToggle.setAttribute('aria-pressed','true');document.body.appendChild(musicToggle);
